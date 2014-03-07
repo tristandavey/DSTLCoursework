@@ -33,24 +33,46 @@
 			</div>
 			<!-- Modal Body -->
 			<div class="modal-body">
-				<ul class="nav nav-tabs">
-					<li class="active"><a href="#home" data-toggle="tab"><i class="icon-th-list"></i>&nbsp;Attributes</a></li>
-				</ul>
-				<div class="tab-content">
-					<div class="tab-pane active attributes" id="home">
-						<div id="form" class="hide">
-							<div class="input-prepend">
-								<span class="add-on"></span>
-								<input class="span1" id="prependedInput" type="text" >
+				<div id="modal-body-path">
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#home" data-toggle="tab"><i class="icon-th-list"></i>&nbsp;Attributes</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active attributes" id="home">
+							<div id="form" class="hide">
+								<div class="input-prepend">
+									<span class="add-on"></span>
+									<input class="span1" id="prependedInput" type="text" >
+								</div>
+								<button class="add-on btn btn-mini btn-danger" type="button">&times;</button>
 							</div>
-							<button class="add-on btn btn-mini btn-danger" type="button">&times;</button>
+							<div id="attributes"> </div>
+							<!-- New Attribute -->
+							<div class="new-attribute input-append">
+								<input id="hazard_name" class="span2" id="appendedInputButton" type="text"  placeholder="Name">
+								<button id="hazard_add" class="btn btn-primary" type="button">Add</button>
+							</div>
 						</div>
-						<div id="attributes"> </div>
-						<!-- New Attribute -->
-						<div class="new-attribute input-append">
-							<input id="hazard_name" class="span2" id="appendedInputButton" type="text"  placeholder="Name">
-							<button id="hazard_add" class="btn btn-primary" type="button">Add</button>
+					</div>
+				</div>
+				<div id="modal-body-node">
+					<ul class="nav nav-tabs">
+						<li><a href="#entitiestab" data-toggle="tab"><i class="icon-th-list"></i>&nbsp;Entities</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active attributes" id="entitiestab">
+							
+							
+							<div id="entities"> </div>
+
+							<!-- New Entity -->
+							<div class="new-entity input-append">
+								<input id="entity_name" class="span2" id="appendedInputButton" type="text"  placeholder="Entity Name">
+								<button id="entity_add" class="btn btn-primary" type="button">Add</button>
+							</div>
+
 						</div>
+
 					</div>
 				</div>
 			</div>

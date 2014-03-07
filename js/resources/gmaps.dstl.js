@@ -220,7 +220,8 @@ $(document).ready(function(){
 		//$(".modal-body").show();
 		//buildHazardsUI(node.hazards);
 		$("#connect",window.$viewer).show();
-		$(".modal-body").hide();
+		$("#modal-body-node").show();
+		$("#modal-body-path").hide();
 		$("#delete",window.$viewer).hide();
 		$("#set_start",window.$viewer).show();
 		
@@ -269,7 +270,8 @@ $(document).ready(function(){
 		$("#connect",window.$viewer).hide();
 		$("#set_start",window.$viewer).hide();
 		$("#delete",window.$viewer).show();
-		$(".modal-body").show();
+		$("#modal-body-node").hide();
+		$("#modal-body-path").show();
 
 	}
 	
