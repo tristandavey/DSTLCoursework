@@ -82,4 +82,15 @@ $(function() {
         return _.defaults(calculatedPathHazards, currentHazards);
     };
 
+    
+    PathNode.prototype.setEntities = function(entities) {
+        var me = this;
+        me.entities = entities;
+    };
+
+    PathNode.prototype.getEntities = function() {
+        var me = this;
+        return me.entities || {};
+    };
+
 });
