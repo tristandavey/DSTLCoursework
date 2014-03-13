@@ -18,6 +18,10 @@
 		<script src="js/core/journey.dstl.js"></script>
 		<script src="js/core/ui.dstl.js"></script>
 
+		<!-- ENTITIES -->
+		<script src="js/core/entities/baseentity.dstl.js"></script>		
+		<script src="js/core/entities/ui/entityui.dstl.js"></script>		
+
 		<!-- MEDIATORS -->
 		<script src="js/core/mediators/mediators.dstl.js"></script>
 
@@ -61,12 +65,17 @@
 					</ul>
 					<div class="tab-content">
 						<div class="tab-pane active attributes" id="entitiestab">
-							
-							
+							<div id="entityForm" class="hide">
+								<div class="input-prepend">
+									<span class="add-on"></span>
+									<input class="span1" id="entityInput" type="text" >
+								</div>
+								<button class="add-on btn btn-mini btn-danger" type="button">&times;</button>
+							</div>
 							<div id="entities"> </div>
 
 							<!-- New Entity -->
-							<div class="new-entity input-append">
+							<div class="new-attribute input-append">
 								<input id="entity_name" class="span2" type="text"  placeholder="Entity Name">
 								<button id="entity_add" class="btn btn-primary" type="button">Add</button>
 							</div>
