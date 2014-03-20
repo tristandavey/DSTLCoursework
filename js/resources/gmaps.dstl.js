@@ -226,6 +226,10 @@ $(document).ready(function(){
 		$("#set_start",window.$viewer).show();
 		
 		$("h5",window.$viewer).text(longLat);
+
+		// BUILD ENTITY UI
+		var entities = window.selected.getEntities();
+		buildEntityUI(entities);
 	}
 
 	//setting line as selecetd, update object viewer
@@ -388,12 +392,8 @@ $(document).ready(function(){
 
 		}
 
-
-
-
 		function buildHazardsUI(hazards) {
 
-			console.log('Loaded attributes ', hazards);
 			$("#attributes").html("");
 			$.each(hazards, function(key, value) {
 				name = $("#hazard_name").val();
@@ -404,6 +404,22 @@ $(document).ready(function(){
 				$("input",inputCopy).val(value);
 
 				$("#attributes").append(inputCopy);
+
+			});
+		}
+
+		function buildEntityUI(entities) {
+
+			$("#entities").html("");
+			$.each(entities, function(key, value) {
+				name = $("#entity_name").val();
+
+				inputCopy = $("#entityForm").clone().attr("id","").removeClass("hide").addClass("entity");
+
+				$("span.add-on", inputCopy).text(key).attr("id", key);
+				$("input", inputCopy).val(value);
+
+				$("#entities").append(inputCopy);
 
 			});
 		}

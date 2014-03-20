@@ -1,13 +1,13 @@
 $(document).ready(function(){
 
-	// Adding new hazard
+	// Adding new entity
 	$("#entity_add").click(function(){
 
 		name = $("#entity_name").val();
 		
 		if(name != "")
 		{
-			inputCopy = $("#entityForm").clone().attr("id","").removeClass("hide").addClass("hazard");
+			inputCopy = $("#entityForm").clone().attr("id","").removeClass("hide").addClass("entity");
 
 
 			$("span.add-on",inputCopy).text(name).attr("id",name);
@@ -21,10 +21,9 @@ $(document).ready(function(){
 				updateEntities();
 			});
 
-
-			//PathNode.prototype.setPathHazards
 			updateEntities();
 		}
+
 	});
 		
 
@@ -43,27 +42,15 @@ $(document).ready(function(){
 
 			newEntities[name] = value;
 
+			console.log("test");
+
 		});
+
+		console.log(newEntities);
 
 		// Set entities for current node
-		window.selected.setHazards(newhazards);
+		window.selected.setEntities(newEntities);
 
-	}
-
-	function buildEntityUI(entities) {
-
-		$("#entities").html("");
-		$.each(entities, function(key, value) {
-			name = $("#entity_name").val();
-
-			inputCopy = $("#entityForm").clone().attr("id","").removeClass("hide").addClass("hazard");
-
-			$("span.add-on", inputCopy).text(key).attr("id", key);
-			$("input", inputCopy).val(value);
-
-			$("#entities").append(inputCopy);
-
-		});
 	}
 
 });
