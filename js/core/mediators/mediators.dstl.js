@@ -32,20 +32,20 @@ Mediate = function(name, valueSoFar, currentValue, allHazards, pathHazards) {
 
                 var ratio = 1;
 
-                if (currentValue > 500) // if the height on this path is more than 500 miles
-                    ratio = 0.8;
-                if (currentValue > 1000) // >1000 miles
-                    ratio = 0.6;
-                if (currentValue > 1500) // >1500 miles
-                    ratio = 0.4;
-                if (currentValue > 2000) // >2000 miles
-                    ratio = 0.3;
-                if (currentValue > 2500) // >2500 miles
-                    ratio = 0.2;
-                if (currentValue > 3000) // >3000 miles
-                    ratio = 0.1;
                 if (currentValue > 3500) // >3000 miles
                     ratio = 0;
+                if (currentValue > 3000) // >3000 miles
+                    ratio = 0.1;
+                if (currentValue > 2500) // >2500 miles
+                    ratio = 0.2;
+                if (currentValue > 2000) // >2000 miles
+                    ratio = 0.3;
+                if (currentValue > 1500) // >1500 miles
+                    ratio = 0.4;
+                if (currentValue > 1000) // >1000 miles
+                    ratio = 0.6;
+                if (currentValue > 500) // if the height on this path is more than 500 miles
+                    ratio = 0.8;
                
                 return {
                     mountain: valueSoFar + currentValue,
@@ -65,16 +65,16 @@ Mediate = function(name, valueSoFar, currentValue, allHazards, pathHazards) {
                 
                 var ratio = 1;
 
-                if (currentValue > 20) // if fog on this path is denser than 20%
-                    ratio = 0.8;
-                if (currentValue > 40) // >40%
-                    ratio = 0.6;
-                if (currentValue > 60) // >60%
-                    ratio = 0.4;
-                if (currentValue > 80) // >80%
-                    ratio = 0.2;
                 if (currentValue == 100) // =100%
                     ratio = 0;
+                if (currentValue > 80) // >80%
+                    ratio = 0.2;
+                if (currentValue > 60) // >60%
+                    ratio = 0.4;
+                if (currentValue > 40) // >40%
+                    ratio = 0.6;
+                if (currentValue > 20) // if fog on this path is denser than 20%
+                    ratio = 0.8;
                
                 return {
                     fog: valueSoFar + currentValue,
@@ -94,16 +94,16 @@ Mediate = function(name, valueSoFar, currentValue, allHazards, pathHazards) {
                 
                 var ratio = 1;
 
-                if (currentValue > 20) // >20%
-                    ratio = 0.8;
-                if (currentValue > 40) // >40%
-                    ratio = 0.6;
-                if (currentValue > 60) // >60%
-                    ratio = 0.4;
-                if (currentValue > 80) // >80%
-                    ratio = 0.2;
                 if (currentValue == 100) // =100%
                     ratio = 0;
+                if (currentValue > 80) // >80%
+                    ratio = 0.2;
+                if (currentValue > 60) // >60%
+                    ratio = 0.4;
+                if (currentValue > 40) // >40%
+                    ratio = 0.6;
+                if (currentValue > 20) // >20%
+                    ratio = 0.8;
                
                 return {
                     rain: valueSoFar + currentValue,
