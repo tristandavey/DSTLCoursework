@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>DSTL - Web app</title>
+
 		<link rel="stylesheet" href="css/bootstrap.css" type="text/css">
 		<link rel="stylesheet" href="css/dstl.css" type="text/css">
 		
@@ -11,12 +12,14 @@
 		<script src="js/resources/underscore-min.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 		<script src="js/resources/bootstrap.min.js"></script>
-		<script src="js/resources/gmaps.dstl.js"></script>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
 		<!-- CORE -->
 		<script src="js/core/node.dstl.js"></script>
 		<script src="js/core/journey.dstl.js"></script>
 		<script src="js/core/ui.dstl.js"></script>
+		<script src="js/core/elevation.dstl.js"></script>
+		<script src="js/core/gmaps.dstl.js"></script>
 
 		<!-- ENTITIES -->
 		<script src="js/core/entities/baseentity.dstl.js"></script>		
@@ -110,6 +113,10 @@
 							<a id="clear" href="#" class="btn btn-inverse">Clear</a>
 							<script id="template" type="template"><p><%= data %></p></script>
 <pre id="data" class="data"> </pre>
+						</div>
+						<div class="output" id="elevationContainer">
+							<h4>Elevation</h4>
+							<pre class="data"><div id="chart_div" ></div></pre>
 						</div>
 					</div>
 				</div>

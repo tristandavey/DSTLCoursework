@@ -15,7 +15,6 @@ $(document).ready(function(){
 			$("#entities").append(inputCopy);
 			$("#entity_name").val("");
 
-			//TODO: Could be .on("click") ~ Live
 			$("#entities .btn-danger").click(function(){
 				$(this).parent().remove();
 				updateEntities();

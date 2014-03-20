@@ -64,7 +64,7 @@ html, body, #map_canvas {
 	top: inherit;
 	bottom: 0px;
 	left: 0px;
-	width: 300px;
+	width: 400px;
 	border-bottom: 0px;
 	border-radius: 5px 5px 0px 0px;
 	background: #FFF;
@@ -97,6 +97,6 @@ html, body, #map_canvas {
 .accordion.global .data{
 	max-height:600px;
 	min-height:80px;
-	overflow: scroll;
-	width: 260px;
+	overflow: scroll-y;
+	width: 360px;
 }
