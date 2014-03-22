@@ -141,6 +141,8 @@ $(document).ready(function() {
                 hazards: {}
             });
 
+            elevationObject.drawElevation(gLine.pathOrder[0], gLine.pathOrder[1]);
+
             // use the journey object to connect. it does the validation
             // marker1.node.connect(marker2.node, []);
             window.journey.connectNodes(nodeA, nodeB);
@@ -359,6 +361,7 @@ $(document).ready(function() {
     $("#start").click(function() {
         if (window.start != null) {
             window.journey.start();
+            window.journey.calculateDistance();
         } else {
             window.alert("Error: Must set a start node to simulate");
         }

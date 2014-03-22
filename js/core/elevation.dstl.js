@@ -62,9 +62,14 @@ $(function() {
             // Draw the chart using the data within its DIV.
             document.getElementById('chart_div').style.display = 'block';
             chart.draw(data, {
-                height: 150,
                 legend: 'none',
-                titleY: 'Elevation (m)'
+                chartArea: {
+                    left: 30,
+                    top: 10,
+                    width: '100%',
+                    height: '100%'
+                },
+                backgroundColor: 'transparent'
             });
         }
 

@@ -37,7 +37,7 @@ html, body, #map_canvas {
 	clear:both;
 }
 .modal.object .input-prepend .add-on {
-	width: 100px;
+	width: 80px;
 	text-align: left;
 }
 .modal.object .attributes .btn-danger {

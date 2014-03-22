@@ -5,7 +5,9 @@ $(function() {
     }
 
     UI.prototype.display = function(data) {
-        $('#data').append( this.template({data: data }) );
+        $('#data').append(this.template({
+            data: data
+        }));
     }
 
     UI.prototype.render = function(completedPath, allCompletedPaths) {
@@ -13,6 +15,10 @@ $(function() {
 
         this.display('Found Journeys:<br>');
         this.display(this.parse_path(completedPath));
+
+        this.display('Journey Distance:<br>');
+        var distance = (completedPath.distance / 1000) * 0.6214;
+        this.display(distance.toFixed(2) + ' miles');
 
 
         this.display('Least number of nodes:<br>');
@@ -29,7 +35,7 @@ $(function() {
         var all_hazards = [];
         _.each(allCompletedPaths, function(path) {
             _.each(path.hazards, function(value, name) {
-                if ( ! _.contains(all_hazards, name)) {
+                if (!_.contains(all_hazards, name)) {
                     all_hazards.push(name);
                 }
             })
@@ -37,7 +43,7 @@ $(function() {
 
 
         _.each(all_hazards, function(hazard_name) {
-            this.display('Lowest '+ hazard_name +' value:<br>');
+            this.display('Lowest ' + hazard_name + ' value:<br>');
             var lowest = null;
             _.each(allCompletedPaths, function(path) {
                 if (lowest == null || path.hazards[hazard_name] < lowest.hazards[hazard_name]) {
@@ -51,7 +57,7 @@ $(function() {
 
     UI.prototype.parse_path = function(path) {
         console.log('path', path);
-        return '<b>'+_.pluck(path.journey, 'id')+'</b> ' + JSON.stringify(path.hazards);
+        return '<b>' + _.pluck(path.journey, 'id') + '</b> ' + JSON.stringify(path.hazards);
     }
 
 });

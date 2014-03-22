@@ -17,7 +17,7 @@ $(function() {
     };
 
     Journey.prototype.findNodeByGMarker = function(gMarker) {
-        xx =  _.first(_.where(this.allNodes, {
+        xx = _.first(_.where(this.allNodes, {
             gMarker: gMarker
         }));
         console.log('xx', xx);
@@ -54,11 +54,29 @@ $(function() {
     };
 
     Journey.prototype.completePath = function(journey, hazards) {
-        var details = { journey: journey, hazards: hazards };
+
+        var distance = 0;
+
+        for (var i = 0; i < journey.length; i++) {
+
+            var curMarker = journey[i].gMarker;
+
+            if (i !== 0) {
+
+                var prevMarker = journey[i - 1].gMarker;
+                distance += google.maps.geometry.spherical.computeDistanceBetween(prevMarker.getPosition(), curMarker.getPosition());
+
+            }
+
+        }
+
+        var details = {
+            journey: journey,
+            hazards: hazards,
+            distance: distance
+        };
 
         this.completedPaths.push(details);
-
-        console.log('one path complete!', journey, hazards);
 
         ui = new UI;
         ui.render(details, this.completedPaths);
@@ -72,19 +90,22 @@ $(function() {
         this.startNode.travel();
     };
 
+    Journey.prototype.calculateDistance = function() {
+
+        var nodes = this.getAllNodes();
+
+    };
+
     window.j = journey = new Journey;
 
-
-
-
     //TODO: Probably best to move these to some sort of ui scripts
-    $('#setStart').click(function(){
+    $('#setStart').click(function() {
         window.setStart = true;
         journey.setStartNode(window.selected_node);
         $('#go').prop('disabled', false);
     });
 
-    $('#go').click(function(){
+    $('#go').click(function() {
         window.journey.start();
     });
 
